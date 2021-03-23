@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Cognizant;
+import com.example.demo.model.Response;
 import com.example.demo.repository.CognizantRepository;
 
 import repository.IdNotFoundException;
@@ -25,10 +26,11 @@ public class CognizantService {
 
 	//Logger log = Logger.getLogger(CognizantService.class);
 	
-	public Cognizant addEmp(Cognizant cog) {
+	public Response addEmp(Cognizant cog) {
 		// TODO Auto-generated method stub
-		return  repository.save(cog);
-	}
+		  repository.save(cog);
+		return new Response(cog.getcId()+"inserted", Boolean.TRUE);
+		}
 
 	public List<Cognizant> getEmp() {
 		// TODO Auto-generated method stub

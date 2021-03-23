@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.model.Cognizant;
+import com.example.demo.model.Response;
 import com.example.demo.repository.CognizantRepository;
 import com.example.demo.service.CognizantService;
 
@@ -48,7 +49,7 @@ public class CognizantController {
 	CognizantRepository cr;
 
 	@PostMapping("/addEmp")
-	public Cognizant addEmployees(@RequestBody Cognizant cog) {
+	public Response addEmployees(@RequestBody Cognizant cog) {
 	log.info("Get all Employees"+cog);
 		return service.addEmp(cog);
 	}
